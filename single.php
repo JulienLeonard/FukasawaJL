@@ -44,12 +44,13 @@
 				</div> <!-- /featured-media -->
 							
 			<?php elseif ( has_post_thumbnail() ) : ?>
-					
+
+<!--					
 				<div class="featured-media">
 		
 					<?php the_post_thumbnail('post-image'); ?>
 					
-				</div> <!-- /featured-media -->
+				</div> --> <!-- /featured-media -->
 					
 			<?php endif; ?>
 			
