@@ -2,6 +2,8 @@
 
 <div class="content">
 
+     <?php if ( !is_category() ) : ?>
+
 	<div class="page-title">
 			
 		<div class="section-inner">
@@ -12,9 +14,11 @@
 				<?php echo get_the_date('F Y'); ?>
 			<?php elseif ( is_year() ) : ?>
 				<?php echo get_the_date('Y'); ?>
+                        <!--
 			<?php elseif ( is_category() ) : ?>
 				<!-- <?php printf( __( 'Category: %s', 'fukasawa' ), '' . single_cat_title( '', false ) . '' ); ?> -->
 				<?php printf( __( '%s', 'fukasawa' ), '' . single_cat_title( '', false ) . '' ); ?>
+                        -->
 			<?php elseif ( is_tag() ) : ?>
 				<?php printf( __( 'Tag: %s', 'fukasawa' ), '' . single_tag_title( '', false ) . '' ); ?>
 			<?php elseif ( is_author() ) : ?>
@@ -38,7 +42,8 @@
 		</div> <!-- /section-inner -->
 		
 	</div> <!-- /page-title -->
-	
+       <?php endif; ?>	
+
 	<?php if ( have_posts() ) : ?>
 	
 		<?php rewind_posts(); ?>
